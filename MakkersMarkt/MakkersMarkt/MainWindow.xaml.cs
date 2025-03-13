@@ -12,6 +12,8 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using MakkersMarkt.Data;
+using MakkersMarkt.Pages.Auth;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,11 +28,12 @@ namespace MakkersMarkt
         public MainWindow()
         {
             this.InitializeComponent();
-        }
-
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
+            using (var context = new MakkersMarktContext())
+            {
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
+            }
+            mainFrame.Navigate(typeof(LogIn));
         }
     }
 }

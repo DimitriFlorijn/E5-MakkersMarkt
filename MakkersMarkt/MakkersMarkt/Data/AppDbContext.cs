@@ -25,6 +25,14 @@ namespace MakkersMarkt.Data
         public DbSet<Specification> Specifications { get; set; }
         public DbSet<Moderation> Moderations { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql(
+                "server=localhost;port=3306;user=root;password=;database=MakkersMarkt",
+                ServerVersion.Parse("8.0.30")
+            );
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Role>().HasData(
