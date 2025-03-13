@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MakkersMarkt (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MakkersMarkt (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
