@@ -42,9 +42,9 @@ namespace MakkersMarkt.Data
             );
 
             modelBuilder.Entity<User>().HasData(
-                new User { Id = 1, RoleId = 1, Name = "AdminUser", Password = "hashedpassword" },
-                new User { Id = 2, RoleId = 2, Name = "MakerUser", Password = "hashedpassword" },
-                new User { Id = 3, RoleId = 3, Name = "BuyerUser", Password = "hashedpassword" }
+                new User { Id = 1, RoleId = 1, Name = "AdminUser", Password = "Password1" },
+                new User { Id = 2, RoleId = 2, Name = "MakerUser", Password = "Password2" },
+                new User { Id = 3, RoleId = 3, Name = "BuyerUser", Password = "Pass1" }
             );
 
             modelBuilder.Entity<Status>().HasData(
