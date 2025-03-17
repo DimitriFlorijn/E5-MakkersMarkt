@@ -1,0 +1,21 @@
+<UserControl
+    x:Class="MakkersMarkt.Pages.NavigationBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MakkersMarkt.Pages"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <muxc:NavigationView IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False">
+            <muxc:NavigationView.Header>
+                <TextBlock Text="Makkers Markt" FontSize="24" FontWeight="Bold" Margin="10"/>
+            </muxc:NavigationView.Header>
+
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="Sell" Tag="SellPage" Icon="Add"/>
+                <muxc:NavigationViewItem Content="Cart" Tag="CartPage" Icon="Shop"/>
+                <muxc:NavigationViewItem Content="Account" Tag="AccountPage" Icon="Contact"/>
+            </muxc:NavigationView.MenuItems>
+        </muxc:NavigationView>
+    </Grid>
+</UserControl>

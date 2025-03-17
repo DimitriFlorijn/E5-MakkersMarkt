@@ -74,9 +74,10 @@ namespace MakkersMarkt.Data
             );
 
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = 1, MakerId = 2, TypeMaterialId = 1, SpecificationId = 1, ProductionTime = "5 days", Name = "Wooden Chair", Description = "Handmade wooden chair", CreatedAt = DateTime.UtcNow },
-                new Product { Id = 2, MakerId = 2, TypeMaterialId = 2, SpecificationId = 2, ProductionTime = "10 days", Name = "Metal Sculpture", Description = "Artistic metal sculpture", CreatedAt = DateTime.UtcNow }
+                new Product { Id = 1, MakerId = 2, TypeMaterialId = 1, SpecificationId = 1, ProductionTime = "5 days", Name = "Wooden Chair", Description = "Handmade wooden chair", CreatedAt = DateTime.UtcNow, Price = 40.00, imageUrl = "Assets/chair.jpg" },
+                new Product { Id = 2, MakerId = 2, TypeMaterialId = 2, SpecificationId = 2, ProductionTime = "10 days", Name = "Metal Sculpture", Description = "Artistic metal sculpture", CreatedAt = DateTime.UtcNow, Price = 40.00, imageUrl = "Assets/sculpture.jpg" }
             );
+
 
             modelBuilder.Entity<Order>().HasData(
                 new Order { Id = 1, BuyerId = 3, ProductId = 1, StatusId = 1, CreatedAt = DateTime.UtcNow }

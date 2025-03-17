@@ -14,6 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using MakkersMarkt.Data;
 using MakkersMarkt.Pages.Auth;
+using MakkersMarkt.Pages;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -33,7 +34,7 @@ namespace MakkersMarkt
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
             }
-            mainFrame.Navigate(typeof(LogIn));
+            mainFrame.Navigate(typeof(StorePage));
         }
     }
 }

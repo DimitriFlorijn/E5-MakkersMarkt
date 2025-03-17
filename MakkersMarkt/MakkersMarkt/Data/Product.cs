@@ -11,6 +11,8 @@ namespace MakkersMarkt.Data
         public int MakerId { get; set; }
         public int TypeMaterialId { get; set; }
         public int SpecificationId { get; set; }
+        public double Price { get; set; }
+        public string imageUrl { get; set; }    
         public string ProductionTime { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
