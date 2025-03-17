@@ -9,7 +9,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Width="300" Spacing="10">
+            <TextBlock Text="Login" FontSize="24" HorizontalAlignment="Center"/>
+            <TextBox x:Name="UsernameTextBox" Header="Username"/>
+            <PasswordBox x:Name="PasswordTextBox" Header="Password"/>
+            <Button Content="Login" Click="LoginButton_Click"/>
+            <TextBlock x:Name="ErrorMessageTextBlock" Foreground="Red" Visibility="Collapsed" HorizontalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </Page>
