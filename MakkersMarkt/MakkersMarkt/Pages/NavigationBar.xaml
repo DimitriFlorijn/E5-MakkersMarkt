@@ -6,7 +6,8 @@
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <muxc:NavigationView IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False">
+        <muxc:NavigationView IsBackButtonVisible="Collapsed" IsPaneToggleButtonVisible="False" 
+                             ItemInvoked="NavigationView_ItemInvoked">
             <muxc:NavigationView.Header>
                 <TextBlock Text="Makkers Markt" FontSize="24" FontWeight="Bold" Margin="10"/>
             </muxc:NavigationView.Header>
