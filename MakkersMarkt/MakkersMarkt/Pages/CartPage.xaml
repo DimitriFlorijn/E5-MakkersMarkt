@@ -10,6 +10,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <local:NavigationBar Grid.Row="0"/>
     </Grid>
 </Page>

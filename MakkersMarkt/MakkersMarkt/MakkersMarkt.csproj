@@ -14,6 +14,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Pages\Auth\LogIn.xaml" />
+    <None Remove="Pages\CartPage.xaml" />
     <None Remove="Pages\NavigationBar.xaml" />
     <None Remove="Pages\SellPage.xaml" />
   </ItemGroup>
@@ -44,6 +45,11 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250228001" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\CartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\SellPage.xaml">
