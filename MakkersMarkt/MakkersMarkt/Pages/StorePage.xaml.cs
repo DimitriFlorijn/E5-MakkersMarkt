@@ -1,6 +1,7 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using MakkersMarkt.Data;
+using MakkersMarkt.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,6 +32,15 @@ namespace MakkersMarkt.Pages
                     }
                 }
             });
+        }
+
+        private void ProductList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.FirstOrDefault() is Product selectedProduct)
+            {
+                CartService.CartItems.Add(selectedProduct);
+                ((ListView)sender).SelectedItem = null; 
+            }
         }
     }
 }
