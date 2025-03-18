@@ -28,7 +28,10 @@ namespace MakkersMarkt.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
-                "server=localhost;port=3306;user=root;password=;database=MakkersMarkt",
+                "server=localhost;" +
+                "port=3306;user=root;" +
+                "password=;" +
+                "database=MakkersMarkt",
                 ServerVersion.Parse("8.0.30")
             );
         }

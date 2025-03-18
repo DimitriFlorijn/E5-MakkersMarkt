@@ -21,7 +21,7 @@
 
         <TextBlock Text="Products" FontSize="24" FontWeight="Bold" Margin="10" Grid.Row="1"/>
 
-        <ListView Grid.Row="2" ItemsSource="{Binding Products}">
+        <ListView Grid.Row="2" ItemsSource="{Binding Products}" SelectionChanged="ProductList_SelectionChanged">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="3"/>
