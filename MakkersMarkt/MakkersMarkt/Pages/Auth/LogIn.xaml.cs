@@ -48,7 +48,7 @@ namespace MakkersMarkt.Pages.Auth
                 if (user != null)
                 {
                     // Login succesvol. Navigeer naar de volgende pagina of doe iets anders.
-                    Frame.Navigate(typeof(MainPage)); // Vervang MainPage door je volgende pagina.
+                    Frame.Navigate(typeof(StorePage));
                 }
                 else
                 {
