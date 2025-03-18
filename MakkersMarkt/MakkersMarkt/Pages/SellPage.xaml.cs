@@ -43,12 +43,54 @@ namespace MakkersMarkt.Pages
             }
         }
 
-
-        // ... other code ...
-
         private async void Submit_Click(object sender, RoutedEventArgs e)
         {
-            double.TryParse(PriceBox.Text, out double price);
+            bool isValid = true;
+
+            // Clear previous error messages
+            NameError.Visibility = Visibility.Collapsed;
+            DescriptionError.Visibility = Visibility.Collapsed;
+            PriceError.Visibility = Visibility.Collapsed;
+            ImageError.Visibility = Visibility.Collapsed;
+
+            // Validate Name
+            if (string.IsNullOrWhiteSpace(NameBox.Text))
+            {
+                NameError.Visibility = Visibility.Visible;
+                isValid = false;
+            }
+
+            // Validate Description
+            if (string.IsNullOrWhiteSpace(DescriptionBox.Text))
+            {
+                DescriptionError.Visibility = Visibility.Visible;
+                isValid = false;
+            }
+
+            // Validate Price
+            if (!double.TryParse(PriceBox.Text, out double price))
+            {
+                PriceError.Visibility = Visibility.Visible;
+                isValid = false;
+            }
+            else if (price < 0)
+            {
+                PriceError.Text = "Price must be a positive number.";
+                PriceError.Visibility = Visibility.Visible;
+                isValid = false;
+            }
+
+            // Validate Image
+            if (_imagePath == null)
+            {
+                ImageError.Visibility = Visibility.Visible;
+                isValid = false;
+            }
+
+            if (!isValid)
+            {
+                return; // Stop if any validation fails
+            }
 
             using (var db = new MakkersMarktContext())
             {
@@ -75,6 +117,5 @@ namespace MakkersMarkt.Pages
                 Frame.Navigate(typeof(StorePage));
             }
         }
-
     }
 }

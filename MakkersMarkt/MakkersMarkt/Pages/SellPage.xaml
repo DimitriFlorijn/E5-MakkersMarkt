@@ -20,13 +20,17 @@
             <TextBlock Text="Sell a Product" FontSize="24" FontWeight="Bold"/>
 
             <TextBox x:Name="NameBox" Header="Product Name"/>
+            <TextBlock x:Name="NameError" Visibility="Collapsed" Foreground="Red" Text="Name is required."/>
 
             <TextBox x:Name="DescriptionBox" Header="Description" AcceptsReturn="True" Height="80" TextWrapping="Wrap"/>
+            <TextBlock x:Name="DescriptionError" Visibility="Collapsed" Foreground="Red" Text="Description is required."/>
 
             <TextBox x:Name="PriceBox" Header="Price" InputScope="CurrencyAmount"/>
+            <TextBlock x:Name="PriceError" Visibility="Collapsed" Foreground="Red" Text="Invalid price."/>
 
             <Button Content="Select Image" Click="SelectImage_Click"/>
             <Image x:Name="ProductImage" Width="200" Height="200" Visibility="Collapsed"/>
+            <TextBlock x:Name="ImageError" Visibility="Collapsed" Foreground="Red" Text="Image is required."/>
 
             <Button Content="Submit" Click="Submit_Click" Background="Green" Foreground="White"/>
         </StackPanel>
