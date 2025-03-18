@@ -16,6 +16,7 @@
                 <muxc:NavigationViewItem Content="Sell" Tag="SellPage" Icon="Add"/>
                 <muxc:NavigationViewItem Content="Cart" Tag="CartPage" Icon="Shop"/>
                 <muxc:NavigationViewItem Content="Account" Tag="Auth.LogIn" Icon="Contact"/>
+                <muxc:NavigationViewItem Content="Home" Tag="StorePage" Icon="Home"/>
             </muxc:NavigationView.MenuItems>
         </muxc:NavigationView>
     </Grid>
