@@ -15,6 +15,7 @@
             <TextBox x:Name="UsernameTextBox" Header="Username"/>
             <PasswordBox x:Name="PasswordTextBox" Header="Password"/>
             <Button Content="Login" Click="LoginButton_Click"/>
+            <Button Content="Register" Click="RegisterButton_Click"/>
             <TextBlock x:Name="ErrorMessageTextBlock" Foreground="Red" Visibility="Collapsed" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>

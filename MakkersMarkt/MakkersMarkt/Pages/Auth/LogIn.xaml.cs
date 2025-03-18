@@ -34,6 +34,7 @@ namespace MakkersMarkt.Pages.Auth
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Password;
 
+
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 ErrorMessageTextBlock.Text = "Username and password are required.";
@@ -57,10 +58,9 @@ namespace MakkersMarkt.Pages.Auth
                 }
             }
         }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            // Optioneel: code bij het navigeren naar de pagina.
+            Frame.Navigate(typeof(RegisterPage)); // Navigeer naar de RegisterPage
         }
     }
 }
