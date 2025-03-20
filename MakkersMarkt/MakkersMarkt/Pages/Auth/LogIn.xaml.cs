@@ -44,7 +44,7 @@ namespace MakkersMarkt.Pages.Auth
 
             using (var db = new MakkersMarktContext())
             {
-                var user = await db.Users.FirstOrDefaultAsync(u => u.Name == Name  && u.Password == password);// Zorg ervoor dat je wachtwoorden hashed opslaat in productie!
+                var user = await db.Users.FirstOrDefaultAsync(u => u.Name == username  && u.Password == password);// Zorg ervoor dat je wachtwoorden hashed opslaat in productie!
 
                 if (user != null)
                 {
