@@ -14,9 +14,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using MakkersMarkt.Data;
 using Microsoft.EntityFrameworkCore;
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
+using BCrypt.Net;
 
 namespace MakkersMarkt.Pages.Auth
 {
@@ -29,11 +27,10 @@ namespace MakkersMarkt.Pages.Auth
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            ErrorMessageTextBlock.Visibility = Visibility.Collapsed; // Reset error message
+            ErrorMessageTextBlock.Visibility = Visibility.Collapsed;
 
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Password;
-
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -44,11 +41,10 @@ namespace MakkersMarkt.Pages.Auth
 
             using (var db = new MakkersMarktContext())
             {
-                var user = await db.Users.FirstOrDefaultAsync(u => u.Name == username  && u.Password == password);// Zorg ervoor dat je wachtwoorden hashed opslaat in productie!
+                var user = await db.Users.FirstOrDefaultAsync(u => u.Name == username);
 
-                if (user != null)
+                if (user != null && BCrypt.Net.BCrypt.Verify(password, user.Password)) //Corrected call
                 {
-                    // Login succesvol. Navigeer naar de volgende pagina of doe iets anders.
                     Frame.Navigate(typeof(StorePage));
                 }
                 else
@@ -58,9 +54,10 @@ namespace MakkersMarkt.Pages.Auth
                 }
             }
         }
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(RegisterPage)); // Navigeer naar de RegisterPage
+            Frame.Navigate(typeof(RegisterPage));
         }
     }
 }
