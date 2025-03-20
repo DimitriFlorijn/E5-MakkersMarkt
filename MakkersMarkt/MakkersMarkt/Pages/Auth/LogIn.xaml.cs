@@ -59,5 +59,9 @@ namespace MakkersMarkt.Pages.Auth
         {
             Frame.Navigate(typeof(RegisterPage));
         }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.GoBack();
+        }
     }
 }

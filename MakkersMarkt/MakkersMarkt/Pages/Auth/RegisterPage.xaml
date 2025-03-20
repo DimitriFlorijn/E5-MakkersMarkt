@@ -11,6 +11,8 @@
 
     <Grid Padding="20">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
+            <Button Content="Back" Click="BackButton_Click"/>
+
             <TextBlock Text="Register" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
 
             <TextBox x:Name="NameBox" Header="Username"/>

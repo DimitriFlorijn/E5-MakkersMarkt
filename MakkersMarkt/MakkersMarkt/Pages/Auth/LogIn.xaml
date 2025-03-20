@@ -11,6 +11,7 @@
 
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
         <StackPanel Width="300" Spacing="10">
+            <Button Content="Back" Click="BackButton_Click"/>
             <TextBlock Text="Login" FontSize="24" HorizontalAlignment="Center"/>
             <TextBox x:Name="UsernameTextBox" Header="Username"/>
             <PasswordBox x:Name="PasswordTextBox" Header="Password"/>
